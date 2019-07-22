@@ -1,0 +1,15 @@
+{
+  "name": "as3commons-collections",
+  "url" : "https://github.com/WolfieWerewolf/as3commons-collections",
+  "license": "MIT",
+  "tags": [],
+  "description": "Haxe port of as3commons-collections",
+  "version": "1.0.0",
+  "classPath": "src/",
+  "releasenote": "",
+  "contributors": ["Wolfie"],
+  "dependencies": {
+    "hx3compat": "1.0.3",
+    "openfl": "8.9.1"
+  }
+}
