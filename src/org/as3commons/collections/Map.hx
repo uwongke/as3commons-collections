@@ -1,6 +1,7 @@
 
 package org.as3commons.collections;
 
+import org.as3commons.collections.framework.core.MapIterator;
 import openfl.utils.Dictionary;
 import org.as3commons.collections.framework.IIterator;
 import org.as3commons.collections.framework.IMap;
@@ -244,9 +245,9 @@ class Map implements IMap {
         return true;
     }
 
-    //public function iterator(cursor : Dynamic = null) : IIterator {
-    //    return new MapIterator(this);
-    //}
+    public function iterator(cursor : Dynamic = null) : IIterator {
+        return new MapIterator(this);
+    }
 
     private function itemRemoved(key : Dynamic, item : Dynamic) : Void {
         
