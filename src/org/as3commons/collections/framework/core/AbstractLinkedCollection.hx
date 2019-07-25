@@ -264,15 +264,15 @@ class AbstractLinkedCollection implements IInsertionOrder {
 
     private function mergeSort(comparator : IComparator) : Void {
         var h : LinkedNode = _first;
-        var p : LinkedNode;
-        var q : LinkedNode;
-        var e : LinkedNode;
-        var tail : LinkedNode;
+        var p : LinkedNode = null;
+        var q : LinkedNode = null;
+        var e : LinkedNode = null;
+        var tail : LinkedNode = null;
         var insize : Int = 1;
-        var nmerges : Int;
-        var psize : Int;
-        var qsize : Int;
-        var i : Int;
+        var nmerges : Int = 0;
+        var psize : Int = 0;
+        var qsize : Int = 0;
+        var i : Int = 0;
         
         while (true) {
             p = h;

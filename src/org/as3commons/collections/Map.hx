@@ -1,6 +1,7 @@
 
 package org.as3commons.collections;
 
+import openfl.utils.Object;
 import org.as3commons.collections.framework.core.MapIterator;
 import openfl.utils.Dictionary;
 import org.as3commons.collections.framework.IIterator;
@@ -11,17 +12,17 @@ class Map implements IMap {
 
     public var size(get, never) : Int;
 
-    private var _keys : Dictionary<Dynamic, Dynamic>;
+    private var _keys : Dictionary<Object, Dynamic>;
 
-    private var _items : Dictionary<Dynamic, Dynamic>;
+    private var _items : Dictionary<Object, Dynamic>;
 
     private var _stringMap : Dynamic;
 
     private var _size : Int = 0;
 
     public function new() {
-        _items = new Dictionary();
-        _keys = new Dictionary();
+        _items = new Dictionary<Object, Dynamic>();
+        _keys = new Dictionary<Object, Dynamic>();
         _stringMap = {};
     }
 
@@ -238,8 +239,8 @@ class Map implements IMap {
         if (_size == 0) {
             return false;
         }
-        _keys = new Dictionary();
-        _items = new Dictionary();
+        _keys = new Dictionary<Object, Dynamic>();
+        _items = new Dictionary<Object, Dynamic>();
         _stringMap = {};
         _size = 0;
         return true;
