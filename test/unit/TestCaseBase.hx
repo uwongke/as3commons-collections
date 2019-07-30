@@ -1,7 +1,7 @@
 package ;
 import haxe.PosInfos;
 import haxe.unit.TestCase;
-class TestCase2 extends TestCase {
+class TestCaseBase extends TestCase {
     public function new() {
 
         super();

@@ -11,14 +11,14 @@ class ArrayUtils {
             return true;
         }
         
-        var i : Float = array1.length;
+        var i : Int = array1.length;
         
         if (i != array2.length) {
             return false;
         }
 
         while (i-- !=0) {
-            if (Reflect.field(array1, Std.string(i)) != Reflect.field(array2, Std.string(i))) {
+            if (array1[i] != array2[i]) {
                 return false;
             }
         }
