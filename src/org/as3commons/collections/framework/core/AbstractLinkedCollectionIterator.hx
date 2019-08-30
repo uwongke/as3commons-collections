@@ -30,11 +30,11 @@ class AbstractLinkedCollectionIterator implements ICollectionIterator {
     }
 
     public function hasPrevious() : Bool {
-        return _next != _collection.firstNode_internal!=null && _collection.size !=0;
+        return (_next != null) && (_collection.firstNode_internal!=null) && ( _collection.size !=0);
     }
 
     public function previous() : Dynamic {
-        if (_next == _collection.firstNode_internal!=null || _collection.size!=0) {
+        if ((_next == _collection.firstNode_internal) && (_next!=null) || _collection.size!=0) {
             _current = null;
             return null;
         }

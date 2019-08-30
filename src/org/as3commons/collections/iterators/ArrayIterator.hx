@@ -10,7 +10,7 @@ class ArrayIterator implements IListIterator {
 
     private var _array : Array<Dynamic>;
 
-    private var _next : Int;
+    private var _next : Null<Int> = null;
 
     private var _current : Int = -1;
 
