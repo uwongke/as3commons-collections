@@ -21,34 +21,30 @@ class AbstractLinkedCollection implements IInsertionOrder {
     public function new() {}
 
     public function reverse() : Bool {
-        if (_size < 2) {
-            return false;
-        }
-        
+        if (_size < 2) return false;
+
         var node : LinkedNode = _last;
         var left : LinkedNode;
         var right : LinkedNode;
-        
-        while (node !=null) {
+
+        while (node != null) {
             left = node.left;
-            if (node.right !=null) {
+            if (node.right == null) {
                 node.right = node.left;
                 node.left = null;
                 _first = node;
-            }
-            else if (node.left !=null) {
+            } else if (node.left == null) {
                 node.left = node.right;
                 node.right = null;
                 _last = node;
-            }
-            else {
+            } else {
                 right = node.right;
                 node.right = node.left;
                 node.left = right;
             }
             node = left;
         }
-        
+
         return true;
     }
 
@@ -281,6 +277,7 @@ class AbstractLinkedCollection implements IInsertionOrder {
             
             while (p !=null) {
                 nmerges++;
+                psize = 0; q = p;
                 for (i in 0...insize) {
                     psize++;
                     q = q.right;

@@ -33,7 +33,7 @@ class ArrayIterator implements IListIterator {
     }
 
     public function hasPrevious() : Bool {
-        var res = if(_next !=null && _array.length !=0){
+        var res = if(_next != 0 && _array.length !=0){
             true;
         } else {
             false;

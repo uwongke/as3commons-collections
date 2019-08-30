@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	
+	<meta title="TestSuite" package="org.as3commons.collections" version="1.0.0" company="Company Name" />
+	<app main="TestSuite" path="bin" file="TestSuite" />
+	<window width="1920" height="1080" fps="60" background="#FFFFFF" />
+	<window allow-high-dpi="true" />
+	<source path="src" />
+	<source path="test/unit" />
+
+	<haxelib name="openfl" />
+	<haxelib name="as3commons-collections" />
+	
+
+
+	<haxeflag name="-debug" />
+
+</project>
