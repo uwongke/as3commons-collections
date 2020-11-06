@@ -57,8 +57,8 @@ class TestComparator implements IComparator
         
         // type
         
-        var type1 : Int = Lambda.indexOf(types, as3hx.Compat.typeof(item1));
-        var type2 : Int = Lambda.indexOf(types, as3hx.Compat.typeof(item2));
+        var type1 : Int = Lambda.indexOf(types, Std.string(Type.typeof(item1)));
+        var type2 : Int = Lambda.indexOf(types, Std.string(Type.typeof(item2)));
         
         if (type1 < type2)
         {
