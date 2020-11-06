@@ -10,7 +10,6 @@
   "contributors": ["Wolfie"],
   "dependencies": {
     "hx3compat": "1.0.3",
-    "openfl": "",
-    "as3hx": ""
+    "openfl": ""
   }
 }
