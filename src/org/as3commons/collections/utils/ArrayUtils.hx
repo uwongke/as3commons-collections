@@ -87,7 +87,7 @@ class ArrayUtils {
         }
         
         var firstHalf : Int = Math.floor(array.length / 2);
-        var secondHalf : Int = as3hx.Compat.parseInt(array.length - firstHalf);
+        var secondHalf : Int = array.length - firstHalf;
         var arr1 : Array<Dynamic> = new Array<Dynamic>(); //firstHalf
         var arr2 : Array<Dynamic> = new Array<Dynamic>(); //secondHalf
         

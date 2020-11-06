@@ -24,7 +24,7 @@ class AbstractList implements IList implements IDataProvider {
 
     public function add(item : Dynamic) : Int {
         _array.push(item);
-        return as3hx.Compat.parseInt(_array.length - 1);
+        return _array.length - 1);
     }
 
     public function count(item : Dynamic) : Int {
@@ -43,7 +43,7 @@ class AbstractList implements IList implements IDataProvider {
     }
 
     public function lastIndexOf(item : Dynamic) : Int {
-        var i : Int = as3hx.Compat.parseInt(_array.length - 1);
+        var i : Int = _array.length - 1;
         while (i >= 0) {
             if (item == _array[i]) {
                 return i;
@@ -92,7 +92,7 @@ class AbstractList implements IList implements IDataProvider {
                 i--;
             }
         }
-        return as3hx.Compat.parseInt(numItems - _array.length);
+        return (numItems - _array.length);
     }
 
     private function get_size() : Int {

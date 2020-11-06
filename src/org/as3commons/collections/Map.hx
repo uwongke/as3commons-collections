@@ -71,15 +71,12 @@ class Map implements IMap {
     public function count(item : Dynamic) : Int {
 //        var count : Int = 0;
 //        var thisItem : Dynamic;
-//        /** AS3HX WARNING could not determine type for var: thisItem exp: EIdent(_stringMap) type: Dynamic */
 //        for(i in 0..._stringMap)
 //        for (thisItem in _stringMap) {
 //            if (thisItem == item) {
 //                count++;
 //            }
 //        }
-//
-//        /** AS3HX WARNING could not determine type for var: thisItem exp: EIdent(_items) type: Dictionary */
 //        for (thisItem in _items) {
 //            if (thisItem == item) {
 //                count++;
@@ -105,8 +102,6 @@ class Map implements IMap {
         for (string in Reflect.fields(_stringMap)) {
             keys.push(string);
         }
-
-        /* AS3HX WARNING could not determine type for var: key exp: EIdent(_keys) type: Dictionary */
         for (key in _keys) {
             keys.push(key);
         }
@@ -175,15 +170,11 @@ class Map implements IMap {
 
     public function has(item : Dynamic) : Bool {
         var thisItem : Dynamic;
-
-        /** AS3HX WARNING could not determine type for var: thisItem exp: EIdent(_stringMap) type: Dynamic */
 //        for (thisItem in _stringMap) {
 //            if (thisItem == item) {
 //                return true;
 //            }
 //        }
-//
-//        /** AS3HX WARNING could not determine type for var: thisItem exp: EIdent(_items) type: Dictionary */
 //        for (thisItem in _items) {
 //            if (thisItem == item) {
 //                return true;
@@ -195,13 +186,9 @@ class Map implements IMap {
     public function toArray() : Array<Dynamic> {
         var items : Array<Dynamic> = new Array<Dynamic>();
         var item : Dynamic;
-
-        /** AS3HX WARNING could not determine type for var: item exp: EIdent(_stringMap) type: Dynamic */
 //        for (item in _stringMap) {
 //            items.push(item);
 //        }
-//
-//        /** AS3HX WARNING could not determine type for var: item exp: EIdent(_items) type: Dictionary */
 //        for (item in _items) {
 //            items.push(item);
 //        }

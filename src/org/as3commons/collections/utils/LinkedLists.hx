@@ -28,7 +28,7 @@ class LinkedLists {
             if (Std.is(source[i], Args)) {
                 wrapper = source[i];
                 if (Std.is(wrapper.source, Array)) {
-                    numAdded += addFromArray(list, try cast(wrapper.source, Array</*AS3HX WARNING no type*/>) catch(e:Dynamic) null);
+                    numAdded += addFromArray(list, wrapper.source);
                 }
                 else if (Std.is(wrapper.source, ICollection)) {
                     numAdded += addFromCollection(list, try cast(wrapper.source, ICollection) catch(e:Dynamic) null);

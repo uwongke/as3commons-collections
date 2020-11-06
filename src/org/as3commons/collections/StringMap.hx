@@ -41,7 +41,6 @@ class StringMap implements IMap {
     public function count(item : Dynamic) : Int {
         var count : Int = 0;
         var thisItem : Dynamic;
-        /** AS3HX WARNING could not determine type for var: thisItem exp: EIdent(_map) type: Dynamic */
         for (thisItem in _map) {
             if (thisItem == item) {
                 count++;
@@ -102,7 +101,6 @@ class StringMap implements IMap {
 
     public function has(item : Dynamic) : Bool {
         var thisItem : Dynamic;
-        /** AS3HX WARNING could not determine type for var: thisItem exp: EIdent(_map) type: Dynamic */
         for (thisItem in _map) {
             if (thisItem == item) {
                 return true;
@@ -114,7 +112,6 @@ class StringMap implements IMap {
     public function toArray() : Array<Dynamic> {
         var items : Array<Dynamic> = new Array<Dynamic>();
         var item : Dynamic;
-        /** AS3HX WARNING could not determine type for var: item exp: EIdent(_map) type: Dynamic */
         for (item in _map) {
             items.push(item);
         }

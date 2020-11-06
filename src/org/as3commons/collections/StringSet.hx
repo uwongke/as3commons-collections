@@ -37,7 +37,6 @@ class StringSet implements ISet {
     public function toArray() : Array<Dynamic> {
         var items : Array<Dynamic> = new Array<Dynamic>();
         var item : Dynamic;
-        /** AS3HX WARNING could not determine type for var: item exp: EIdent(_items) type: Dynamic */
         for (item in _items) {
             items.push(item);
         }

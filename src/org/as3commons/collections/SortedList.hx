@@ -23,17 +23,14 @@ class SortedList extends AbstractList implements ISortedList {
         var index : Int = firstIndexOfEqual(item);
         
         if (index > -1) {
-            
             return (index != 0) ? index - 1 : -1;
         }
         else if (index == -1) {
-            
             return -1;
         }
         // first equal item should be added after start
         else {
-            
-            return as3hx.Compat.parseInt((-index - 1) - 1);
+            return (-index - 2);
         }
     }
 
@@ -41,15 +38,12 @@ class SortedList extends AbstractList implements ISortedList {
         var index : Int = lastIndexOfEqual(item);
         
         if (index > -1) {
-            
             index++;
         }
         // last equal item should be added there
         else {
-            
-            index = as3hx.Compat.parseInt(-index - 1);
+            index = -index - 1;
         }
-        
         return (index == _array.length) ? -1 : index;
     }
 
@@ -106,7 +100,7 @@ class SortedList extends AbstractList implements ISortedList {
             index++;
         }
         else {
-            index = as3hx.Compat.parseInt(-index - 1);
+            index = -index - 1;
         }
         _array.splice(index, 0, item);
         return index;
@@ -162,7 +156,7 @@ class SortedList extends AbstractList implements ISortedList {
         if (item == _array[lastIndex]) {
             return lastIndex;
         }
-        var i : Int = as3hx.Compat.parseInt(lastIndex - 1);
+        var i : Int = lastIndex - 1;
         while (i >= 0) {
             if (_comparator.compare(item, _array[i])) {
                 break;
@@ -197,7 +191,7 @@ class SortedList extends AbstractList implements ISortedList {
                 size--;
             }
         }
-        return as3hx.Compat.parseInt(numItems - _array.length);
+        return (numItems - _array.length);
     }
 
     override public function has(item : Dynamic) : Bool {
@@ -246,23 +240,23 @@ class SortedList extends AbstractList implements ISortedList {
 
     private function firstIndexOfEqual(item : Dynamic) : Int {
         var start : Int = 0;
-        var end : Int = as3hx.Compat.parseInt(_array.length - 1);  // end may become negative  
+        var end : Int = _array.length - 1;  // end may become negative
         var cursor : Int;
         var match : Bool = false;
         while (start <= end) {
-            cursor = as3hx.Compat.parseInt((end + start) / 2);
+            cursor = Math.floor((end + start) / 2);
             switch (_comparator.compare(item, _array[cursor])) {
                 case 0:
                     if (cursor == start) {
                         return cursor;
                     }
                     match = true;
-                    end = as3hx.Compat.parseInt(cursor - 1);
+                    end = cursor - 1;
                 case -1:  // array at cursor greater than item  
                     if (cursor == start) {
                         return -1 - cursor;
                     }
-                    end = as3hx.Compat.parseInt(cursor - 1);
+                    end = cursor - 1;
                 case 1:  // array at cursor lesser than item  
                     if (cursor == end) {
                         if (match) {
@@ -270,7 +264,7 @@ class SortedList extends AbstractList implements ISortedList {
                         }
                         return -1 - (cursor + 1);
                     }
-                    start = as3hx.Compat.parseInt(cursor + 1);
+                    start = cursor + 1;
             }
         }
         return -1;
@@ -278,18 +272,18 @@ class SortedList extends AbstractList implements ISortedList {
 
     private function lastIndexOfEqual(item : Dynamic) : Int {
         var start : Int = 0;
-        var end : Int = as3hx.Compat.parseInt(_array.length - 1);  // end may become negative  
+        var end : Int = _array.length - 1;  // end may become negative
         var cursor : Int;
         var match : Bool = false;
         while (start <= end) {
-            cursor = as3hx.Compat.parseInt((end + start) / 2);
+            cursor = Math.floor((end + start) / 2);
             switch (_comparator.compare(item, _array[cursor])) {
                 case 0:
                     if (cursor == end) {
                         return cursor;
                     }
                     match = true;
-                    start = as3hx.Compat.parseInt(cursor + 1);
+                    start = cursor + 1;
                 case -1:  // array at cursor greater than item  
                     if (cursor == start) {
                         if (match) {
@@ -297,12 +291,12 @@ class SortedList extends AbstractList implements ISortedList {
                         }
                         return -1 - cursor;
                     }
-                    end = as3hx.Compat.parseInt(cursor - 1);
+                    end = cursor - 1;
                 case 1:  // array at cursor lesser than item  
                     if (cursor == end) {
                         return -1 - (cursor + 1);
                     }
-                    start = as3hx.Compat.parseInt(cursor + 1);
+                    start = cursor + 1;
             }
         }
         return -1;

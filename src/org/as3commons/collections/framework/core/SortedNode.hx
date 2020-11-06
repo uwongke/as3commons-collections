@@ -18,7 +18,7 @@ class SortedNode {
 
     public function new(theItem : Dynamic) {
         item = theItem;
-        priority = as3hx.Compat.parseInt(Math.random() * as3hx.Compat.INT_MAX);
+        priority = Math.floor(Math.random() * 0x3FFFFFFF);
         order = ++_order;
     }
 }

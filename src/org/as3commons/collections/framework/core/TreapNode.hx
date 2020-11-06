@@ -15,6 +15,6 @@ class TreapNode {
     public function new(theItem : Dynamic, theParent : TreapNode = null) {
         item = theItem;
         parent = theParent;
-        priority = as3hx.Compat.parseInt(Math.random() * as3hx.Compat.INT_MAX);
+        priority = Math.floor(Math.random() * 0x3FFFFFFF);
     }
 }

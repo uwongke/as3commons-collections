@@ -51,12 +51,9 @@ class Set implements ISet {
     public function toArray() : Array<Dynamic> {
         var items : Array<Dynamic> = new Array<Dynamic>();
         var item : Dynamic;
-        /** AS3HX WARNING could not determine type for var: item exp: EIdent(_stringItems) type: Dynamic */
         for (item in _stringItems) {
             items.push(item);
         }
-
-        /** AS3HX WARNING could not determine type for var: item exp: EIdent(_items) type: Dictionary */
         for (item in _items) {
             items.push(item);
         }
