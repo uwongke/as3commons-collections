@@ -41,7 +41,7 @@ class ArrayUtils {
                 map.replaceFor(Reflect.field(array1, Std.string(i)), map.itemFor(Reflect.field(array1, Std.string(i))) + 1);
             }
             else {
-                map.add(Reflect.field(array1, Std.string(i)), 1);
+                map.add(array1[Std.int(i)]/*Reflect.field(array1, Std.string(i))*/, 1);
             }
         }
         
